@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PlywoodWorld - Premium plywood, laminates, MDF and interior wood solutions.">
+  <title>PlywoodWorld | Premium Wood Solutions</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
+    :root {
+      --brown-dark: #2d170d;
+      --brown: #663b20;
+      --brown-light: #9b6035;
+      --wood: #c98b52;
+      --gold: #e8ad54;
+      --cream: #fff7e8;
+      --cream-dark: #f3e4c9;
+      --green: #285943;
+      --green-light: #4d8b68;
+      --orange: #ed7b36;
+      --red: #b84932;
+      --white: #ffffff;
+      --text: #33261e;
+      --muted: #76685d;
+      --shadow: 0 18px 50px rgba(61, 32, 15, 0.13);
+      --radius: 22px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 247, 232, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(102, 59, 32, 0.12);
+    }
+
+    .nav {
+      max-width: 1240px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--brown-dark);
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, #d79a5d, #75401f);
+      color: white;
+      box-shadow: 0 6px 16px rgba(102, 59, 32, .25);
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--orange);
+      transition: .3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-btn {
+      background: var(--brown-dark);
+      color: white;
+      padding: 12px 19px;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .nav-btn:hover {
+      background: var(--orange);
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 760px;
+      padding: 150px 24px 90px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg,
+          rgba(39, 20, 10, .94) 0%,
+          rgba(55, 28, 14, .79) 45%,
+          rgba(55, 28, 14, .28) 100%),
+        url("https://images.unsplash.com/photo-1544967082-d9d25d867d66?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      right: -180px;
+      bottom: -280px;
+      border-radius: 50%;
+      background: rgba(232, 173, 84, .2);
+      filter: blur(2px);
+    }
+
+    .hero-inner {
+      max-width: 1240px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.25);
+      padding: 8px 15px;
+      border-radius: 100px;
+      color: #ffe0a3;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: .99;
+      margin-bottom: 25px;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #f4e8dc;
+      font-size: 18px;
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      padding: 15px 24px;
+      border-radius: 100px;
+      font-weight: 800;
+      transition: .3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      box-shadow: 0 10px 25px rgba(237,123,54,.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #f48b4c;
+    }
+
+    .btn-light {
+      color: white;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.3);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-light:hover {
+      background: white;
+      color: var(--brown-dark);
+    }
+
+    .hero-stats {
+      margin-top: 75px;
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .stat strong {
+      font-size: 32px;
+      color: var(--gold);
+      display: block;
+    }
+
+    .stat small {
+      color: #eadfd4;
+    }
+
+    /* =========================
+       COMMON
+    ========================== */
+
+    section {
+      padding: 95px 24px;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: auto;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 50px;
+    }
+
+    .section-tag {
+      color: var(--orange);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 9px;
+    }
+
+    .section-head h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--brown-dark);
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* =========================
+       CATEGORIES
+    ========================== */
+
+    .categories {
+      background: #fffaf0;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .category {
+      min-height: 280px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      padding: 25px;
+      box-shadow: var(--shadow);
+    }
+
+    .category img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      transition: .6s;
+    }
+
+    .category:hover img {
+      transform: scale(1.08);
+    }
+
+    .category::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 25%, rgba(20,10,5,.88));
+    }
+
+    .category-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .category h3 {
+      font-size: 23px;
+      margin-bottom: 5px;
+    }
+
+    .category p {
+      color: #eadfd6;
+      font-size: 13px;
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================== */
+
+    .products {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(232,173,84,.16), transparent 28%),
+        var(--cream);
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      border: 1px solid #dbc8b2;
+      color: var(--brown);
+      background: #fffaf1;
+      padding: 10px 17px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--brown-dark);
+      color: white;
+      border-color: var(--brown-dark);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 35px rgba(66,39,20,.09);
+      transition: .35s;
+      border: 1px solid rgba(102,59,32,.07);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-image {
+      height: 250px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      height: 100%;
+      transition: .5s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.06);
+    }
+
+    .badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--orange);
+      color: white;
+      padding: 6px 11px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .product-info {
+      padding: 22px;
+    }
+
+    .product-info h3 {
+      color: var(--brown-dark);
+      font-size: 21px;
+      margin-bottom: 5px;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .price {
+      color: var(--green);
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .view-btn {
+      border: none;
+      background: var(--cream-dark);
+      color: var(--brown-dark);
+      border-radius: 50px;
+      padding: 9px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* =========================
+       WHY US
+    ========================== */
+
+    .why {
+      background: var(--brown-dark);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .13;
+      background-image:
+        linear-gradient(90deg, transparent 95%, #e7ad68 95%),
+        linear-gradient(#e7ad68 5%, transparent 5%);
+      background-size: 75px 75px;
+    }
+
+    .why-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .why .section-head h2 {
+      color: white;
+    }
+
+    .why .section-head p {
+      color: #d7c6b8;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .feature {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 23px;
+      border-radius: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: rgba(232,173,84,.17);
+      color: var(--gold);
+      border-radius: 14px;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .feature h3 {
+      margin-bottom: 5px;
+    }
+
+    .feature p {
+      color: #cbb9aa;
+      font-size: 13px;
+    }
+
+    .why-image {
+      border-radius: 30px;
+      overflow: hidden;
+      height: 560px;
+      box-shadow: 0 25px 60px rgba(0,0,0,.35);
+    }
+
+    .why-image img {
+      height: 100%;
+    }
+
+    /* =========================
+       SHOWCASE
+    ========================== */
+
+    .showcase {
+      background: #fffaf1;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      grid-template-rows: 260px 260px;
+      gap: 15px;
+    }
+
+    .gallery-item {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      transition: .5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 25px;
+      color: white;
+      background: linear-gradient(transparent, rgba(0,0,0,.78));
+    }
+
+    .gallery-overlay h3 {
+      font-size: 21px;
+    }
+
+    /* =========================
+       PROCESS
+    ========================== */
+
+    .process {
+      background: var(--cream);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      padding: 28px;
+      background: white;
+      border-radius: 22px;
+      border-bottom: 5px solid var(--orange);
+      box-shadow: 0 10px 30px rgba(75,44,20,.07);
+    }
+
+    .step-number {
+      font-family: "Playfair Display", serif;
+      font-size: 50px;
+      line-height: 1;
+      color: var(--cream-dark);
+      margin-bottom: 20px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      color: var(--brown-dark);
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       QUOTE
+    ========================== */
+
+    .quote {
+      padding: 100px 24px;
+      background:
+        linear-gradient(110deg, rgba(40,89,67,.96), rgba(40,89,67,.83)),
+        url("https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
+      color: white;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .quote h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .quote p {
+      color: #dcece2;
+      max-width: 550px;
+    }
+
+    .quote-form {
+      background: white;
+      color: var(--text);
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 25px 60px rgba(0,0,0,.25);
+    }
+
+    .quote-form h3 {
+      font-size: 25px;
+      margin-bottom: 20px;
+      color: var(--brown-dark);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--brown);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid #ded3c8;
+      border-radius: 12px;
+      padding: 12px 13px;
+      outline: none;
+      background: #fffdf9;
+      color: var(--text);
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(237,123,54,.1);
+    }
+
+    .field textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      width: 100%;
+      border: none;
+      background: var(--orange);
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 800;
+      margin-top: 5px;
+    }
+
+    .form-message {
+      margin-top: 12px;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 13px;
+      display: none;
+    }
+
+    /* =========================
+       TESTIMONIALS
+    ========================== */
+
+    .testimonials {
+      background: #fffaf1;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .testimonial {
+      padding: 28px;
+      background: white;
+      border-radius: 22px;
+      box-shadow: 0 10px 35px rgba(67,42,23,.07);
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 19px;
+      margin-bottom: 15px;
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .person {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--orange), var(--brown));
+    }
+
+    .person strong {
+      display: block;
+    }
+
+    .person small {
+      color: var(--muted);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #1d1009;
+      color: white;
+      padding: 65px 24px 25px;
+    }
+
+    .footer-grid {
+      max-width: 1240px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 45px;
+      padding-bottom: 45px;
+    }
+
+    .footer-brand p {
+      color: #ad9b8d;
+      max-width: 340px;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+      color: #ffe3bb;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 9px;
+      color: #ad9b8d;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      max-width: 1240px;
+      margin: auto;
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      color: #867469;
+      font-size: 12px;
+    }
+
+    /* =========================
+       TOAST
+    ========================== */
+
+    .toast {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      background: var(--brown-dark);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 13px;
+      box-shadow: var(--shadow);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: .35s;
+      z-index: 2000;
+      font-size: 14px;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 1000px) {
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 15px;
+        right: 15px;
+        padding: 20px;
+        border-radius: 18px;
+        background: white;
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-btn {
+        display: none;
+      }
+
+      .hero {
+        min-height: 700px;
+      }
+
+      .hero-stats {
+        gap: 25px;
+      }
+
+      .why-grid,
+      .quote-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-image {
+        height: 400px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 260px 200px 200px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      section {
+        padding: 70px 18px;
+      }
+
+      .nav {
+        padding: 14px 18px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .logo-icon {
+        width: 37px;
+        height: 37px;
+      }
+
+      .hero {
+        padding: 130px 18px 70px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .category-grid,
+      .product-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category {
+        min-height: 240px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        display: block;
+      }
+
+      .gallery-item {
+        height: 250px;
+        margin-bottom: 15px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .copyright {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header>
+    <nav class="nav">
+      <a href="#home" class="logo">
+        <div class="logo-icon">PW</div>
+        Plywood<span>World</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#showcase">Visual Studio</a></li>
+        <li><a href="#about">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-btn">Get a Quote →</a>
+    </nav>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-inner">
+
+        <div class="eyebrow">
+          ✦ Premium Wood & Interior Materials
+        </div>
+
+        <h1>
+          Build spaces that
+          <span>feel timeless.</span>
+        </h1>
+
+        <p>
+          Discover premium plywood, laminates, MDF and architectural
+          surfaces designed for beautiful homes, offices, hotels and
+          commercial spaces.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#products" class="btn btn-primary">
+            Explore Products →
+          </a>
+
+          <a href="#showcase" class="btn btn-light">
+            View Visual Studio
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>15+</strong>
+            <small>Years of Experience</small>
+          </div>
+
+          <div class="stat">
+            <strong>500+</strong>
+            <small>Design Projects</small>
+          </div>
+
+          <div class="stat">
+            <strong>40+</strong>
+            <small>Wood Finishes</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
+
+    <section class="categories">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-tag">Our Collection</div>
+          <h2>Everything your space needs.</h2>
+          <p>
+            Explore our curated range of premium wood and interior
+            materials for residential and commercial applications.
+          </p>
+        </div>
+
+        <div class="category-grid">
+
+          <article class="category">
+            <img
+              src="https://images.unsplash.com/photo-1601058268499-e52658e4f9f5?auto=format&fit=crop&w=900&q=80"
+              alt="Plywood sheets">
+            <div class="category-content">
+              <h3>Premium Plywood</h3>
+              <p>Strong • Durable • Reliable</p>
+            </div>
+          </article>
+
+          <article class="category">
+            <img
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80"
+              alt="Interior laminate">
+            <div class="category-content">
+              <h3>Designer Laminates</h3>
+              <p>Colourful • Modern • Elegant</p>
+            </div>
+          </article>
+
+          <article class="category">
+            <img
+              src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=80"
+              alt="Modern interior">
+            <div class="category-content">
+              <h3>MDF & Boards</h3>
+              <p>Smooth • Versatile • Precise</p>
+            </div>
+          </article>
+
+          <article class="category">
+            <img
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+              alt="Luxury wood interior">
+            <div class="category-content">
+              <h3>Luxury Surfaces</h3>
+              <p>Premium • Textured • Unique</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         PRODUCTS
+    ========================== -->
+
+    <section class="products" id="products">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-tag">Featured Products</div>
+          <h2>Made for beautiful ideas.</h2>
+          <p>
+            Select the right material for your next interior,
+            furniture or architectural project.
+          </p>
+        </div>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="plywood">Plywood</button>
+          <button class="filter-btn" data-filter="mdf">MDF</button>
+          <button class="filter-btn" data-filter="laminate">Laminates</button>
+          <button class="filter-btn" data-filter="premium">Premium</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+          <article class="product-card" data-category="plywood premium">
+            <div class="product-image">
+              <span class="badge">BESTSELLER</span>
+              <img
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80"
+                alt="Marine plywood">
+            </div>
+
+            <div class="product-info">
+              <h3>Marine Shield 710</h3>
+              <p>High-strength waterproof plywood for demanding interiors.</p>
+
+              <div class="product-bottom">
+                <span class="price">Premium Grade</span>
+                <button class="view-btn" onclick="showProduct('Marine Shield 710')">
+                  Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="product-card" data-category="plywood">
+            <div class="product-image">
+              <span class="badge">POPULAR</span>
+              <img
+                src="https://images.unsplash.com/photo-1601058268499-e52658e4f9f5?auto=format&fit=crop&w=900&q=80"
+                alt="Furniture plywood">
+            </div>
+
+            <div class="product-info">
+              <h3>Furniture Pro</h3>
+              <p>Reliable plywood engineered for furniture and cabinetry.</p>
+
+              <div class="product-bottom">
+                <span class="price">Grade A+</span>
+                <button class="view-btn" onclick="showProduct('Furniture Pro')">
+                  Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="product-card" data-category="mdf">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=900&q=80"
+                alt="MDF board">
+            </div>
+
+            <div class="product-info">
+              <h3>UltraSmooth MDF</h3>
+              <p>Perfectly smooth board for painting, routing and CNC work.</p>
+
+              <div class="product-bottom">
+                <span class="price">Smooth Finish</span>
+                <button class="view-btn" onclick="showProduct('UltraSmooth MDF')">
+                  Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="product-card" data-category="laminate">
+            <div class="product-image">
+              <span class="badge">NEW</span>
+              <img
+                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80"
+                alt="Wood laminate">
+            </div>
+
+            <div class="product-info">
+              <h3>Oak Texture Laminate</h3>
+              <p>Warm natural texture inspired by premium European oak.</p>
+
+              <div class="product-bottom">
+                <span class="price">Natural Series</span>
+                <button class="view-btn" onclick="showProduct('Oak Texture Laminate')">
+                  Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="product-card" data-category="laminate premium">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80"
+                alt="Luxury laminate">
+            </div>
+
+            <div class="product-info">
+              <h3>Velvet Matte</h3>
+              <p>Ultra-matte surface with a sophisticated soft-touch finish.</p>
+
+              <div class="product-bottom">
+                <span class="price">Luxury Series</span>
+                <button class="view-btn" onclick="showProduct('Velvet Matte')">
+                  Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="product-card" data-category="premium plywood">
+            <div class="product-image">
+              <span class="badge">PREMIUM</span>
+              <img
+                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80"
+                alt="Premium wood interior">
+            </div>
+
+            <div class="product-info">
+              <h3>Architect Select</h3>
+              <p>Designer-grade material selected for luxury interiors.</p>
+
+              <div class="product-bottom">
+                <span class="price">Architect Series</span>
+                <button class="view-btn" onclick="showProduct('Architect Select')">
+                  Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         WHY US
+    ========================== -->
+
+    <section class="why" id="about">
+      <div class="container">
+
+        <div class="why-grid">
+
+          <div>
+            <div class="section-head">
+              <div class="section-tag">Why PlywoodWorld</div>
+
+              <h2>
+                Materials that make
+                designers confident.
+              </h2>
+
+              <p>
+                From the first sketch to the finished room,
+                we help architects, interior designers and homeowners
+                choose materials that look exceptional and perform
+                for years.
+              </p>
+            </div>
+
+            <div class="features">
+
+              <div class="feature">
+                <div class="feature-icon">✓</div>
+                <h3>Quality Tested</h3>
+                <p>Every material is selected for consistency and performance.</p>
+              </div>
+
+              <div class="feature">
+                <div class="feature-icon">◆</div>
+                <h3>Design First</h3>
+                <p>Modern colours, textures and finishes for contemporary spaces.</p>
+              </div>
+
+              <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Supply</h3>
+                <p>Efficient order handling for projects of every size.</p>
+              </div>
+
+              <div class="feature">
+                <div class="feature-icon">♻</div>
+                <h3>Responsible</h3>
+                <p>We believe beautiful design should respect natural resources.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="why-image">
+            <img
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"
+              alt="Luxury wooden interior">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         VISUAL STUDIO
+    ========================== -->
+
+    <section class="showcase" id="showcase">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-tag">PlywoodWorld Visual Studio</div>
+          <h2>See the material. Imagine the space.</h2>
+          <p>
+            A visual collection of interiors, furniture and architectural
+            spaces inspired by wood, texture and colour.
+          </p>
+        </div>
+
+        <div class="gallery">
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1300&q=85"
+              alt="Luxury living room">
+            <div class="gallery-overlay">
+              <h3>Warm Minimalism</h3>
+              <p>Natural oak • Soft textures • Modern living</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=80"
+              alt="Modern bedroom">
+            <div class="gallery-overlay">
+              <h3>Modern Comfort</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80"
+              alt="Designer interior">
+            <div class="gallery-overlay">
+              <h3>Designer Details</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80"
+              alt="Wood kitchen">
+            <div class="gallery-overlay">
+              <h3>Kitchen Studio</h3>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80"
+              alt="Luxury office">
+            <div class="gallery-overlay">
+              <h3>Executive Spaces</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         PROCESS
+    ========================== -->
+
+    <section class="process">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-tag">How It Works</div>
+          <h2>From idea to finished space.</h2>
+        </div>
+
+        <div class="process-grid">
+
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Tell Us Your Idea</h3>
+            <p>
+              Share your project requirements, style and approximate
+              material quantity.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Choose Materials</h3>
+            <p>
+              Explore suitable plywood, MDF, laminate and surface
+              combinations.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Get Your Quote</h3>
+            <p>
+              Receive project-specific pricing and material recommendations.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">04</div>
+            <h3>Build Beautifully</h3>
+            <p>
+              Get your materials and turn the design into a finished space.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         QUOTE FORM
+    ========================== -->
+
+    <section class="quote" id="contact">
+      <div class="container">
+
+        <div class="quote-grid">
+
+          <div>
+            <div class="section-tag">Start Your Project</div>
+
+            <h2>
+              Have a space in mind?
+              Let's build it.
+            </h2>
+
+            <p>
+              Tell us what you're working on and our team can help
+              you select the right materials, finishes and quantities.
+            </p>
+          </div>
+
+          <form class="quote-form" id="quoteForm">
+
+            <h3>Request a Free Quote</h3>
+
+            <div class="form-row">
+              <div class="field">
+                <label>YOUR NAME</label>
+                <input type="text" id="name" required placeholder="Your name">
+              </div>
+
+              <div class="field">
+                <label>PHONE</label>
+                <input type="tel" id="phone" required placeholder="+91 XXXXX XXXXX">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label>PROJECT TYPE</label>
+                <select id="project">
+                  <option>Home Interior</option>
+                  <option>Office</option>
+                  <option>Hotel / Hospitality</option>
+                  <option>Furniture</option>
+                  <option>Commercial</option>
+                  <option>Architectural Project</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>MATERIAL</label>
+                <select id="material">
+                  <option>Plywood</option>
+                  <option>MDF</option>
+                  <option>Laminate</option>
+                  <option>Premium Surfaces</option>
+                  <option>Not Sure</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>PROJECT DETAILS</label>
+              <textarea
+                id="details"
+                placeholder="Tell us about your project..."></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">
+              Send Quote Request →
+            </button>
+
+            <div class="form-message" id="formMessage">
+              ✓ Thank you! Your enquiry has been recorded.
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         TESTIMONIALS
+    ========================== -->
+
+    <section class="testimonials">
+      <div class="container">
+
+        <div class="section-head">
+          <div class="section-tag">Client Stories</div>
+          <h2>Loved by people who build.</h2>
+        </div>
+
+        <div class="testimonial-grid">
+
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>
+              "The material selection was excellent. The texture and
+              finish completely changed the look of our living room."
+            </p>
+
+            <div class="person">
+              <div class="avatar">AK</div>
+              <div>
+                <strong>Arjun Kapoor</strong>
+                <small>Homeowner</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>
+              "PlywoodWorld helped us choose the right boards for a
+              large furniture project. Quality was consistent."
+            </p>
+
+            <div class="person">
+              <div class="avatar">RS</div>
+              <div>
+                <strong>Riya Sharma</strong>
+                <small>Interior Designer</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>
+              "The visual studio made it much easier to imagine the
+              finished interior before selecting the final materials."
+            </p>
+
+            <div class="person">
+              <div class="avatar">VM</div>
+              <div>
+                <strong>Vikram Mehta</strong>
+                <small>Architect</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <div class="logo-icon">PW</div>
+          Plywood<span>World</span>
+        </a>
+
+        <p>
+          Premium plywood, laminates, MDF and architectural
+          surfaces for people who believe great spaces begin
+          with great materials.
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#products">Plywood</a></li>
+          <li><a href="#products">MDF Boards</a></li>
+          <li><a href="#products">Laminates</a></li>
+          <li><a href="#showcase">Visual Studio</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#about">Quality</a></li>
+          <li><a href="#contact">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li>📍 New Delhi, India</li>
+          <li>☎ +91 98765 43210</li>
+          <li>✉ hello@plywoodworld.com</li>
+          <li>Mon – Sat, 9 AM – 7 PM</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 PlywoodWorld. All rights reserved.</span>
+      <span>Crafted for better spaces.</span>
+    </div>
+
+  </footer>
+
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /* -------------------------
+       MOBILE MENU
+    -------------------------- */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+
+
+    /* -------------------------
+       PRODUCT FILTER
+    -------------------------- */
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const products = document.querySelectorAll(".product-card");
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        products.forEach(product => {
+
+          const categories = product.dataset.category;
+
+          if (filter === "all" || categories.includes(filter)) {
+            product.style.display = "block";
+
+            setTimeout(() => {
+              product.style.opacity = "1";
+              product.style.transform = "translateY(0)";
+            }, 20);
+
+          } else {
+            product.style.opacity = "0";
+            product.style.transform = "translateY(10px)";
+
+            setTimeout(() => {
+              product.style.display = "none";
+            }, 200);
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* -------------------------
+       PRODUCT DETAILS
+    -------------------------- */
+
+    function showProduct(productName) {
+
+      showToast(
+        "✓ " + productName +
+        " selected. Contact us for pricing and availability."
+      );
+
+      document.getElementById("contact").scrollIntoView({
+        behavior: "smooth"
+      });
+
+    }
+
+
+    /* -------------------------
+       QUOTE FORM
+    -------------------------- */
+
+    const quoteForm = document.getElementById("quoteForm");
+    const formMessage = document.getElementById("formMessage");
+
+    quoteForm.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      if (!name || !phone) {
+        showToast("Please enter your name and phone number.");
+        return;
+      }
+
+      formMessage.style.display = "block";
+
+      showToast(
+        "Thank you, " + name +
+        "! Your quote request has been submitted."
+      );
+
+      quoteForm.reset();
+
+    });
+
+
+    /* -------------------------
+       TOAST
+    -------------------------- */
+
+    let toastTimer;
+
+    function showToast(message) {
+
+      const toast = document.getElementById("toast");
+
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(toastTimer);
+
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3500);
+
+    }
+
+
+    /* -------------------------
+       SCROLL REVEAL
+    -------------------------- */
+
+    const revealItems = document.querySelectorAll(
+      ".category, .product-card, .feature, .step, .testimonial"
+    );
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    revealItems.forEach(item => {
+
+      item.style.opacity = "0";
+      item.style.transform = "translateY(25px)";
+      item.style.transition = "opacity .6s ease, transform .6s ease";
+
+      observer.observe(item);
+
+    });
+
+
+    /* -------------------------
+       ACTIVE NAVIGATION
+    -------------------------- */
+
+    const sections = document.querySelectorAll("main section");
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+
+      let current = "";
+
+      sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+
+      });
+
+      navItems.forEach(link => {
+
+        link.style.color = "";
+
+        if (link.getAttribute("href") === "#" + current) {
+          link.style.color = "var(--orange)";
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
